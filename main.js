@@ -24,17 +24,25 @@ function renderCoffees(coffees) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
+    let selectedRoast = roastSelection.value;
+    let filteredCoffees = [];
+    let coffeeName= document.getElementById("coffee-name");
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
+            if (coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
+                filteredCoffees.push(coffee);
+            }
         }
-        else if (selectedRoast === 'all')
-            filteredCoffees.push(coffee);
+        else if (selectedRoast === 'all') {
+                if (coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
+                    filteredCoffees.push(coffee);
+                }
+            }
 });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -56,46 +64,13 @@ var coffees = [
 
 
 var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
+var inputText = document.querySelector('#coffee-name');
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
-
-//Adds all option
-function addAllRoast () {
-    //Creates new element
-    let allOptionTag = document.createElement("option");
-    let newAll = document.createTextNode("all");
-    allOptionTag.appendChild(newAll);
-    //References existing elements to receive new element
-    let roastSelection = document.getElementById("roast-selection");
-    let lightOption = roastSelection.firstElementChild;
-    //Inserts new element into referenced existing element
-    roastSelection.insertBefore(allOptionTag, lightOption);
-}
-addAllRoast();
+inputText.addEventListener('input', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees);
 
 
 
-// setting function selectedCoffee for interaction with submit
-function selectedCoffee() {
-    let selectedRoast = roastSelection.value;
-    let filteredCoffees = [];
-    let coffeeName= document.getElementById("coffee-name");
-    coffees.forEach(function(coffee) {
-        if (selectedRoast === "all") {
-            if (coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
-                filteredCoffees.push(coffee);
-            }
-        } else if (coffee.roast === selectedRoast) {
-            if (coffee.name.toLowerCase().includes(coffeeName.value.toLowerCase())) {
-                filteredCoffees.push(coffee);
-            }
-
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
-selectedCoffee();
