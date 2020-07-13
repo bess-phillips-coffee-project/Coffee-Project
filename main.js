@@ -1,5 +1,5 @@
 "use strict"
-
+// replacing and refactoring the outdated code
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<div class="tableData">' + coffee.id + '</div>';
@@ -21,7 +21,7 @@ function renderCoffees(coffees) {
     }
     return html;
 }
-
+// edited updateCoffees function to reflect needs of the instructions
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
@@ -41,7 +41,7 @@ function updateCoffees(e) {
 });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-
+// using dom events to allow user to add new coffee types to the page
 function addNewCoffee (e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let coffeeName = newCoffeeName.value;
@@ -52,7 +52,7 @@ function addNewCoffee (e) {
     }
     newCoffeeName.value = "";
 }
-
+// left array as is there wasnt a need to change anything
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -70,7 +70,7 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
+// query selectors for the DOM
 
 var tbody = document.querySelector('#coffees');
 var inputText = document.querySelector('#coffee-name');
@@ -80,7 +80,7 @@ var newRoastSelection = document.querySelector('#new-roast-selection');
 var newCoffeeName = document.querySelector('#new-coffee-name');
 
 tbody.innerHTML = renderCoffees(coffees);
-
+// added event listeners for the DOM
 inputText.addEventListener('input', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', addNewCoffee);
