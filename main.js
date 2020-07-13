@@ -2,9 +2,9 @@
 // replacing and refactoring the outdated code
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<div class="tableData">' + coffee.id + '</div>';
-    html += '<div class="tableData">' + coffee.name + '</div>';
-    html += '<div class="tableData">' + coffee.roast + '</div>';
+    // html += '<div class="tableData">' + coffee.id + '</div>';
+    html += '<div class="tableData"><h4>' + coffee.name + '</h4></div>';
+    html += '<div class="tableData"><p>' + coffee.roast + '</p></div>';
     html += '</div>';
 
     return html;
@@ -84,6 +84,3 @@ tbody.innerHTML = renderCoffees(coffees);
 inputText.addEventListener('input', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', addNewCoffee);
-
-
-

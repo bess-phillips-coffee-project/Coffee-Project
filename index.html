@@ -15,53 +15,53 @@
 </head>
 <body>
 
-<h1>Coffee!</h1>
+<div class="header">
+    <h1>Coffee!</h1>
+</div>
+<hr>
 
-<form>
-    <h6>Roast</h6>
-    <label for="roast-selection"></label>
-    <select id="roast-selection">
-        <option value="all">all</option>
-        <option value="light">light</option>
-        <option value="medium">medium</option>
-        <option value="dark">dark</option>
-    </select>
-
-
-    <h6>Coffee Name</h6>
-    <label for="coffee-name"></label>
-    <input id="coffee-name" type="text">
-
-</form>
-
-<h3>Add a coffee</h3>
-
-<form>
-    <h6>Roast</h6>
-    <label for="roast-selection"></label>
-    <select id="new-roast-selection">
-        <option value="light">light</option>
-        <option value="medium">medium</option>
-        <option value="dark">dark</option>
-    </select>
+<div class="coffee-container">
+    <form>
+        <h6>Roast</h6>
+        <label for="roast-selection"></label>
+        <select id="roast-selection">
+            <option value="all">all</option>
+            <option value="light">light</option>
+            <option value="medium">medium</option>
+            <option value="dark">dark</option>
+        </select>
 
 
-    <h6>Coffee Name</h6>
-    <label for="new-coffee-name"></label>
-    <input id="new-coffee-name" type="text">
-    <input id="submit" type="submit">
-</form>
+        <h6>Coffee Name</h6>
+        <label for="coffee-name"></label>
+        <input id="coffee-name" type="text">
 
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>ROAST</th>
-    </tr>
-    </thead>
-    <tbody id="coffees"></tbody>
-</table>
+    </form>
+
+    <div class="add-coffee">
+        <h3>Add a coffee</h3>
+    </div>
+
+    <form>
+        <h6>Roast</h6>
+        <label for="roast-selection"></label>
+        <select id="new-roast-selection">
+            <option value="light">light</option>
+            <option value="medium">medium</option>
+            <option value="dark">dark</option>
+        </select>
+
+
+        <h6>Coffee Name</h6>
+        <label for="new-coffee-name"></label>
+        <input id="new-coffee-name" type="text">
+        <input id="submit" type="submit">
+    </form>
+</div>
+
+<div class="table-container">
+        <div id="coffees"></div>
+</div>
 
 
 <!--    linking to main.js script   -->
