@@ -20,47 +20,52 @@
 </div>
 <hr>
 
-<div class="coffee-container">
-    <form>
-        <h6>Roast</h6>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option value="all">all</option>
-            <option value="light">light</option>
-            <option value="medium">medium</option>
-            <option value="dark">dark</option>
-        </select>
+<div class="body-container">
+    <div class="coffee-container">
+        <form>
+            <h6>Roast</h6>
+            <label for="roast-selection"></label>
+            <select id="roast-selection">
+                <option value="all">all</option>
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
 
 
-        <h6>Coffee Name</h6>
-        <label for="coffee-name"></label>
-        <input id="coffee-name" type="text">
+            <h6 class="coffee-name-heading">Coffee Name</h6>
+            <label for="coffee-name"></label>
+            <input id="coffee-name" type="text">
 
-    </form>
+        </form>
 
-    <div class="add-coffee">
-        <h3>Add a coffee</h3>
+        <div class="add-coffee">
+            <h4>Add a coffee</h4>
+        </div>
+
+        <form>
+            <h6>Roast</h6>
+            <label for="roast-selection"></label>
+            <select id="new-roast-selection">
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
+
+
+            <h6 class="coffee-name-heading">Coffee Name</h6>
+            <label for="new-coffee-name"></label>
+            <input id="new-coffee-name" type="text">
+            <input id="submit" type="submit">
+        </form>
     </div>
 
-    <form>
-        <h6>Roast</h6>
-        <label for="roast-selection"></label>
-        <select id="new-roast-selection">
-            <option value="light">light</option>
-            <option value="medium">medium</option>
-            <option value="dark">dark</option>
-        </select>
+    <div class="vl">
+    </div>
 
-
-        <h6>Coffee Name</h6>
-        <label for="new-coffee-name"></label>
-        <input id="new-coffee-name" type="text">
-        <input id="submit" type="submit">
-    </form>
-</div>
-
-<div class="table-container">
-        <div id="coffees"></div>
+    <aside class="col-6 row" id="coffees">
+        <div class="col-6"></div>
+    </aside>
 </div>
 
 
